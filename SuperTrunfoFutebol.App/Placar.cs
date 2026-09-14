@@ -4,9 +4,9 @@ namespace SuperTrunfoFutebol
 {
     public class Placar
     {
-        public int PontosJogador { get; private set; }
-        public int PontosComputador { get; private set; }
-        public int Empates { get; private set; }
+        public int PontosJogador { get; set; }
+        public int PontosComputador { get; set; }
+        public int Empates { get; set; }
 
         public void RegistrarRodada(string vencedor)
         {

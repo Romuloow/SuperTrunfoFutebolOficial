@@ -2,8 +2,7 @@ using System;
 
 namespace SuperTrunfoFutebol
 {
-    // Classe pública que representa uma carta do Super Trunfo (um jogador de futebol).
-    // Cada carta tem informações básicas e 4 atributos numéricos usados na disputa.
+
     public class Jogador
     {
         public string Nome { get; set; }
@@ -14,18 +13,16 @@ namespace SuperTrunfoFutebol
         public int Assistencias { get; set; }
         public int NotaGeral { get; set; }
 
-        // Construtor: recebe os dados da carta e valida se fazem sentido.
-        // Se algum valor for inválido, uma exceção é lançada (tratamento de exceções).
         public Jogador(string nome, string time, string posicao, int gols, int copas, int assistencias, int notaGeral)
         {
             if (notaGeral < 0 || notaGeral > 100)
             {
-                throw new AtributoInvalidoException("A nota geral deve estar entre 0 e 100.");
+                throw new ArgumentException("A nota geral deve estar entre 0 e 100.");
             }
 
             if (gols < 0 || copas < 0 || assistencias < 0)
             {
-                throw new AtributoInvalidoException("Os atributos numéricos não podem ser negativos.");
+                throw new ArgumentException("Os atributos numéricos não podem ser negativos.");
             }
 
             Nome = nome;
@@ -37,7 +34,6 @@ namespace SuperTrunfoFutebol
             NotaGeral = notaGeral;
         }
 
-        // Mostra a carta inteira no console, com todos os atributos.
         public void ExibirCarta()
         {
             Console.WriteLine($"----- {Nome} -----");
@@ -50,8 +46,6 @@ namespace SuperTrunfoFutebol
             Console.WriteLine("---------------------");
         }
 
-        // Retorna o valor do atributo escolhido (1 a 4).
-        // Se a opção não existir, lança uma exceção personalizada.
         public int ObterAtributo(int opcao)
         {
             switch (opcao)
@@ -65,7 +59,7 @@ namespace SuperTrunfoFutebol
                 case 4:
                     return NotaGeral;
                 default:
-                    throw new AtributoInvalidoException("Opção de atributo inválida. Escolha um número entre 1 e 4.");
+                    throw new ArgumentException("Opção de atributo inválida. Escolha um número entre 1 e 4.");
             }
         }
     }

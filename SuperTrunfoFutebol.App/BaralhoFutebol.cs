@@ -3,12 +3,8 @@ using System.Collections.Generic;
 
 namespace SuperTrunfoFutebol
 {
-    // Classe estática: não precisa ser instanciada (sem "new").
-    // Ela só entrega funcionalidades relacionadas ao baralho de cartas.
     public static class BaralhoFutebol
     {
-        // Cria o baralho fixo com 10 ídolos do futebol brasileiro.
-        // Pelé é a carta "Super Trunfo" (a de maior nota geral do baralho).
         public static List<Jogador> CriarBaralho()
         {
             List<Jogador> cartas = new List<Jogador>();
@@ -27,7 +23,6 @@ namespace SuperTrunfoFutebol
             return cartas;
         }
 
-        // Embaralha a lista de cartas (algoritmo de Fisher-Yates, usando um loop "for").
         public static void Embaralhar(List<Jogador> cartas)
         {
             Random sorteio = new Random();

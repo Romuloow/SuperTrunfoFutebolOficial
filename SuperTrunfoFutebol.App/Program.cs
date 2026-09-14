@@ -34,7 +34,6 @@ namespace SuperTrunfoFutebol
             Placar placar = new Placar();
             int numeroRodada = 1;
 
-            // Loop principal: continua enquanto os dois ainda tiverem cartas
             while (cartasJogador.Count > 0 && cartasComputador.Count > 0)
             {
                 Console.WriteLine($"\n----- RODADA {numeroRodada} -----");
@@ -55,7 +54,6 @@ namespace SuperTrunfoFutebol
                 Console.WriteLine($"\nCarta do computador revelada: {cartaComputador.Nome}");
                 Console.WriteLine($"Valor escolhido -> Você: {valorJogador} | Computador: {valorComputador}");
 
-                // As duas cartas jogadas saem do topo de cada monte
                 cartasJogador.RemoveAt(0);
                 cartasComputador.RemoveAt(0);
 
@@ -106,7 +104,7 @@ namespace SuperTrunfoFutebol
 
                     if (escolha < 1 || escolha > 4)
                     {
-                        throw new AtributoInvalidoException("Escolha inválida. Digite um número entre 1 e 4.");
+                        throw new ArgumentException("Escolha inválida. Digite um número entre 1 e 4.");
                     }
 
                     return escolha;
@@ -115,7 +113,7 @@ namespace SuperTrunfoFutebol
                 {
                     Console.WriteLine("Erro: digite apenas números.");
                 }
-                catch (AtributoInvalidoException ex)
+                catch (ArgumentException ex)
                 {
                     Console.WriteLine($"Erro: {ex.Message}");
                 }

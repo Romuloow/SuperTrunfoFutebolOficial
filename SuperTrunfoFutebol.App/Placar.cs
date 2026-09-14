@@ -2,14 +2,12 @@ using System;
 
 namespace SuperTrunfoFutebol
 {
-    // Classe pública que guarda a pontuação da partida.
     public class Placar
     {
         public int PontosJogador { get; private set; }
         public int PontosComputador { get; private set; }
         public int Empates { get; private set; }
 
-        // Registra o resultado de uma rodada.
         public void RegistrarRodada(string vencedor)
         {
             if (vencedor == "jogador")
@@ -26,7 +24,6 @@ namespace SuperTrunfoFutebol
             }
             else
             {
-                // Uso de exceção para proteger o método de um valor inesperado
                 throw new ArgumentException("Vencedor inválido. Use 'jogador', 'computador' ou 'empate'.");
             }
         }

@@ -11,11 +11,11 @@ namespace SuperTrunfoFutebol
             Console.WriteLine("   SUPER TRUNFO - ÍDOLOS DO FUTEBOL BR");
             Console.WriteLine("=========================================");
 
-            // Cria e embaralha o baralho (uso da classe estática BaralhoFutebol)
+            // Cria e embaralha o baralho
             List<Jogador> baralhoCompleto = BaralhoFutebol.CriarBaralho();
             BaralhoFutebol.Embaralhar(baralhoCompleto);
 
-            // Divide as cartas entre você e o computador
+            // Divide as cartas entre o jogador e o computador
             List<Jogador> cartasJogador = new List<Jogador>();
             List<Jogador> cartasComputador = new List<Jogador>();
 
@@ -31,6 +31,8 @@ namespace SuperTrunfoFutebol
                 }
             }
 
+
+            // Criação do placar e início do jogo
             Placar placar = new Placar();
             int numeroRodada = 1;
 
@@ -88,9 +90,7 @@ namespace SuperTrunfoFutebol
             placar.ExibirResultado();
         }
 
-        // Lê a escolha do atributo digitada pelo usuário.
-        // Usa try/catch para tratar entradas inválidas (tratamento de exceções).
-        private static int LerEscolhaAtributo()
+        public static int LerEscolhaAtributo()
         {
             while (true)
             {
@@ -119,7 +119,6 @@ namespace SuperTrunfoFutebol
                 }
                 catch (Exception ex)
                 {
-                    // Catch genérico: protege o programa de qualquer outro erro inesperado
                     Console.WriteLine($"Erro inesperado: {ex.Message}");
                 }
             }

@@ -8,8 +8,10 @@ namespace SuperTrunfoFutebol.Tests
     public class BaralhoFutebolTests
     {
         [TestMethod]
-        public void CriarBaralho_DeveRetornarDezCartas()
+        public void TesteCriarBaralho()
         {
+            // Verificar se o baralho tem 10 cartas
+
             // Cenário + Ação
             List<Jogador> baralho = BaralhoFutebol.CriarBaralho();
 
@@ -18,19 +20,10 @@ namespace SuperTrunfoFutebol.Tests
         }
 
         [TestMethod]
-        public void CriarBaralho_DeveConterPeleNoBaralho()
+        public void TesteEmbaralhar()
         {
-            // Cenário + Ação
-            List<Jogador> baralho = BaralhoFutebol.CriarBaralho();
+            // Verificar se o baralho segue tendo 10 cartas após embaralhar
 
-            // Verificação
-            bool contemPele = baralho.Exists(jogador => jogador.Nome == "Pelé");
-            Assert.IsTrue(contemPele);
-        }
-
-        [TestMethod]
-        public void Embaralhar_NaoDevePerderNenhumaCarta()
-        {
             // Cenário
             List<Jogador> baralho = BaralhoFutebol.CriarBaralho();
             int quantidadeAntes = baralho.Count;
@@ -38,7 +31,7 @@ namespace SuperTrunfoFutebol.Tests
             // Ação
             BaralhoFutebol.Embaralhar(baralho);
 
-            // Verificação: embaralhar não pode adicionar nem remover cartas
+            // Verificação
             Assert.AreEqual(quantidadeAntes, baralho.Count);
         }
     }

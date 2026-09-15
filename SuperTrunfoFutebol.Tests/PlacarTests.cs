@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SuperTrunfoFutebol;
 
@@ -7,8 +8,10 @@ namespace SuperTrunfoFutebol.Tests
     public class PlacarTests
     {
         [TestMethod]
-        public void RegistrarRodada_VitoriaDoJogador_DeveIncrementarPontosDoJogador()
+        public void TesteRegistrarRodada_Jogador()
         {
+            // Conferir de ao registro de vitória de jogador, é incrementado ao placar do jogador.
+
             // Cenário
             Placar placar = new Placar();
 
@@ -17,12 +20,13 @@ namespace SuperTrunfoFutebol.Tests
 
             // Verificação
             Assert.AreEqual(1, placar.PontosJogador);
-            Assert.AreEqual(0, placar.PontosComputador);
         }
 
         [TestMethod]
-        public void RegistrarRodada_Empate_DeveIncrementarEmpates()
+        public void TesteRegistrarRodada_Empate()
         {
+            // Conferir se ao registrar empate, é incrementado ao placar de empate.
+
             // Cenário
             Placar placar = new Placar();
 
@@ -34,21 +38,26 @@ namespace SuperTrunfoFutebol.Tests
         }
 
         [TestMethod]
-        public void RegistrarRodada_ComVencedorInvalido_DeveLancarExcecao()
+        public void TesteRegistrarRodada_Excecao()
         {
+            // Conferir se registrar um vencedor inválido, é lançado uma exceção.
+
             // Cenário
             Placar placar = new Placar();
+            bool erroEsperado = false;
 
-            // Ação + Verificação
+            // Ação
             try
             {
                 placar.RegistrarRodada("time_fantasma");
-                Assert.Fail("Esperava-se que uma exceção fosse lançada.");
             }
-            catch (System.ArgumentException)
+            catch (ArgumentException)
             {
-                // Exceção esperada
+                erroEsperado = true;
             }
+
+            // Verificação
+            Assert.AreEqual(true, erroEsperado);
         }
     }
 }

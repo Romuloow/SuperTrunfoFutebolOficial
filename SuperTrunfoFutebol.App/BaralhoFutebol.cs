@@ -9,7 +9,7 @@ namespace SuperTrunfoFutebol
         {
             List<Jogador> cartas = new List<Jogador>();
 
-            cartas.Add(new Jogador("Pelé", "Santos", "Atacante", 1281, 3, 350, 100));
+            cartas.Add(new Jogador("Pelé", "Santos", "Atacante", 1281, 3, 150, 100));
             cartas.Add(new Jogador("Ronaldo Fenômeno", "Cruzeiro", "Atacante", 414, 2, 98, 98));
             cartas.Add(new Jogador("Zico", "Flamengo", "Meia", 826, 0, 270, 97));
             cartas.Add(new Jogador("Romário", "Vasco", "Atacante", 1002, 1, 150, 97));

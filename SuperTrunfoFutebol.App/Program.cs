@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 
@@ -46,7 +47,7 @@ namespace SuperTrunfoFutebol
                 Console.WriteLine("\nSua carta:");
                 cartaJogador.ExibirCarta();
 
-                Console.WriteLine($"\nCarta do computador (oculta): {cartaComputador.Nome} - ???");
+                //Console.WriteLine($"\nCarta do computador (oculta): {cartaComputador.Nome} - ???");
 
                 int escolha = LerEscolhaAtributo();
 

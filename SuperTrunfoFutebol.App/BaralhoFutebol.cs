@@ -9,18 +9,18 @@ namespace SuperTrunfoFutebol
         {
             List<Jogador> cartas = new List<Jogador>();
 
-            cartas.Add(new Jogador("Pelé", "Santos", "Atacante", 80, 3, 40, 100));
-            cartas.Add(new Jogador("Ronaldo Fenômeno", "Seleção Brasileira", "Atacante", 62, 2, 31, 97));
-            cartas.Add(new Jogador("Zico", "Flamengo", "Meia", 66, 0, 20, 93));
-            cartas.Add(new Jogador("Romário", "Seleção Brasileira", "Atacante", 55, 1, 14, 95));
-            cartas.Add(new Jogador("Ronaldinho Gaúcho", "Seleção Brasileira", "Meia", 33, 1, 20, 94));
-            cartas.Add(new Jogador("Garrincha", "Botafogo", "Ponta", 17, 2, 27, 92));
-            cartas.Add(new Jogador("Neymar Jr", "Santos", "Atacante", 77, 0, 59, 93));
-            cartas.Add(new Jogador("Cafu", "São Paulo", "Lateral", 5, 2, 32, 88));
-            cartas.Add(new Jogador("Rivaldo", "Palmeiras", "Meia", 35, 1, 17, 90));
-            cartas.Add(new Jogador("Kaká", "Milan", "Meia", 30, 0, 25, 91));
+            cartas.Add(new Jogador("Pelé", "Santos", "Atacante", 1281, 3, 350, 100));
+            cartas.Add(new Jogador("Ronaldo Fenômeno", "Cruzeiro", "Atacante", 414, 2, 98, 98));
+            cartas.Add(new Jogador("Zico", "Flamengo", "Meia", 826, 0, 270, 97));
+            cartas.Add(new Jogador("Romário", "Vasco", "Atacante", 1002, 1, 150, 97));
+            cartas.Add(new Jogador("Garrincha", "Botafogo", "Atacante", 245, 2, 110, 96));
+            cartas.Add(new Jogador("Ronaldinho Gaúcho", "Atlético Mineiro", "Meia", 313, 1, 192, 95));
+            cartas.Add(new Jogador("Rivellino", "Fluminense", "Meia", 175, 1, 140, 93));
+            cartas.Add(new Jogador("Sócrates", "Corinthians", "Meia", 292, 0, 120, 92));
+            cartas.Add(new Jogador("Cafu", "São Paulo", "Lateral", 37, 2, 130, 90));
+            cartas.Add(new Jogador("Fred", "Fluminense", "Atacante", 412, 0, 101, 89));
 
-            return cartas;
+            return cartas;  
         }
 
         public static void Embaralhar(List<Jogador> cartas)

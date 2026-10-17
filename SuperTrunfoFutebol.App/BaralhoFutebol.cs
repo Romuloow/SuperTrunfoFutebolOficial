@@ -31,9 +31,9 @@ namespace SuperTrunfoFutebol
             {
                 int j = sorteio.Next(0, i + 1);
 
-                Jogador temp = cartas[i];
+                Jogador temporario = cartas[i];
                 cartas[i] = cartas[j];
-                cartas[j] = temp;
+                cartas[j] = temporario;
             }
         }
     }

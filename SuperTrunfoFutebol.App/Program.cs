@@ -44,6 +44,9 @@ namespace SuperTrunfoFutebol
                 Jogador cartaJogador = cartasJogador[0];
                 Jogador cartaComputador = cartasComputador[0];
 
+                Console.WriteLine($"Suas cartas: {cartasJogador.Count}");
+                Console.WriteLine($"Cartas do computador: {cartasComputador.Count}");
+
                 Console.WriteLine("\nSua carta:");
                 cartaJogador.ExibirCarta();
 
@@ -106,7 +109,8 @@ namespace SuperTrunfoFutebol
                     if (escolha < 1 || escolha > 4)
                     {
                         throw new ArgumentException("Escolha inválida. Digite um número entre 1 e 4.");
-                    }
+                    } 
+
 
                     return escolha;
                 }

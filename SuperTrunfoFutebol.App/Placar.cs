@@ -30,7 +30,9 @@ namespace SuperTrunfoFutebol
 
         public void ExibirResultado()
         {
-            Console.WriteLine($"Placar -> Você: {PontosJogador} | Computador: {PontosComputador} | Empates: {Empates}");
+            Console.WriteLine($"┌──────────────────────────────────────────────────┐");
+            Console.WriteLine($"│ Placar  │  Você: {PontosJogador.ToString().PadLeft(2)}  │  PC: {PontosComputador.ToString().PadLeft(2)}  │  Empates: {Empates.ToString().PadLeft(2)}  │");
+            Console.WriteLine($"└──────────────────────────────────────────────────┘");
         }
     }
 }

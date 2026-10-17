@@ -8,9 +8,10 @@ namespace SuperTrunfoFutebol
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("=========================================");
-            Console.WriteLine("   SUPER TRUNFO - ÍDOLOS DO FUTEBOL BR");
-            Console.WriteLine("=========================================");
+            Console.WriteLine("┌─────────────────────────────────────────┐");
+            Console.WriteLine("│  SUPER TRUNFO - ÍDOLOS DO FUTEBOL BRASIL│");
+            Console.WriteLine("└─────────────────────────────────────────┘");
+            Console.WriteLine();
 
             // Cria e embaralha o baralho
             List<Jogador> baralhoCompleto = BaralhoFutebol.CriarBaralho();
@@ -39,15 +40,16 @@ namespace SuperTrunfoFutebol
 
             while (cartasJogador.Count > 0 && cartasComputador.Count > 0)
             {
-                Console.WriteLine($"\n----- RODADA {numeroRodada} -----");
+                Console.WriteLine($"\n╔═════════════════════════════════════════╗");
+                Console.WriteLine($"║  RODADA {numeroRodada.ToString().PadLeft(3)}                              ║");
+                Console.WriteLine($"╚═════════════════════════════════════════╝");
 
                 Jogador cartaJogador = cartasJogador[0];
                 Jogador cartaComputador = cartasComputador[0];
 
-                Console.WriteLine($"Suas cartas: {cartasJogador.Count}");
-                Console.WriteLine($"Cartas do computador: {cartasComputador.Count}");
+                Console.WriteLine($"Suas cartas: {cartasJogador.Count} | Cartas do computador: {cartasComputador.Count}");
 
-                Console.WriteLine("\nSua carta:");
+                Console.WriteLine("\n>>> Sua Carta <<<");
                 cartaJogador.ExibirCarta();
 
                 //Console.WriteLine($"\nCarta do computador (oculta): {cartaComputador.Nome} - ???");
@@ -57,29 +59,29 @@ namespace SuperTrunfoFutebol
                 int valorJogador = cartaJogador.ObterAtributo(escolha);
                 int valorComputador = cartaComputador.ObterAtributo(escolha);
 
-                Console.WriteLine($"\nCarta do computador revelada: {cartaComputador.Nome}");
-                Console.WriteLine($"Valor escolhido -> Você: {valorJogador} | Computador: {valorComputador}");
+                Console.WriteLine($"\n>>> Carta do Computador <<<\n{cartaComputador.Nome}");
+                Console.WriteLine($"\nValor Escolhido: Você ({valorJogador}) vs Computador ({valorComputador})");
 
                 cartasJogador.RemoveAt(0);
                 cartasComputador.RemoveAt(0);
 
                 if (valorJogador > valorComputador)
                 {
-                    Console.WriteLine("Você venceu a rodada!");
+                    Console.WriteLine("\n✓ Você venceu a rodada!");
                     cartasJogador.Add(cartaJogador);
                     cartasJogador.Add(cartaComputador);
                     placar.RegistrarRodada("jogador");
                 }
                 else if (valorComputador > valorJogador)
                 {
-                    Console.WriteLine("O computador venceu a rodada!");
+                    Console.WriteLine("\n✗ O computador venceu a rodada!");
                     cartasComputador.Add(cartaJogador);
                     cartasComputador.Add(cartaComputador);
                     placar.RegistrarRodada("computador");
                 }
                 else
                 {
-                    Console.WriteLine("Empate! Cada um fica com a própria carta.");
+                    Console.WriteLine("\n= Empate! Cada um fica com a própria carta.");
                     cartasJogador.Add(cartaJogador);
                     cartasComputador.Add(cartaComputador);
                     placar.RegistrarRodada("empate");
@@ -89,8 +91,10 @@ namespace SuperTrunfoFutebol
                 placar.ExibirResultado();
             }
 
-            Console.WriteLine("\n===== FIM DE JOGO =====");
-            Console.WriteLine(cartasJogador.Count == 0 ? "O computador venceu o jogo!" : "Você venceu o jogo!");
+            Console.WriteLine("\n┌─────────────────────────────────────────┐");
+            Console.WriteLine("│  FIM DE JOGO                            │");
+            Console.WriteLine("└─────────────────────────────────────────┘");
+            Console.WriteLine(cartasJogador.Count == 0 ? "\nO computador venceu o jogo!\n" : "\nVocê venceu o jogo!\n");
             placar.ExibirResultado();
         }
 
@@ -98,8 +102,15 @@ namespace SuperTrunfoFutebol
         {
             while (true)
             {
-                Console.WriteLine("\nEscolha o atributo para disputar:");
-                Console.WriteLine("1 - Gols | 2 - Copas do Mundo | 3 - Assistências | 4 - Nota Geral");
+                Console.WriteLine("\n┌─────────────────────────────────────┐");
+                Console.WriteLine("│ Escolha o atributo para disputar:   │");
+                Console.WriteLine("├─────────────────────────────────────┤");
+                Console.WriteLine("│ 1 - Gols                            │");
+                Console.WriteLine("│ 2 - Copas do Mundo                  │");
+                Console.WriteLine("│ 3 - Assistências                    │");
+                Console.WriteLine("│ 4 - Nota Geral                      │");
+                Console.WriteLine("└─────────────────────────────────────┘");
+                Console.Write(">>> Digite sua escolha: ");
                 string entrada = Console.ReadLine();
 
                 try

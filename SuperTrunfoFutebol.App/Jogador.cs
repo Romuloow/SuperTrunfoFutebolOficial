@@ -36,14 +36,17 @@
 
             public void ExibirCarta()
             {
-                Console.WriteLine($"----- {Nome} -----");
-                Console.WriteLine($"Time: {Time}");
-                Console.WriteLine($"Posição: {Posicao}");
-                Console.WriteLine($"1 - Gols: {Gols}");
-                Console.WriteLine($"2 - Copas do Mundo: {Copas}");
-                Console.WriteLine($"3 - Assistências: {Assistencias}");
-                Console.WriteLine($"4 - Nota Geral: {NotaGeral}");
-                Console.WriteLine("---------------------");
+                Console.WriteLine("┌─────────────────────────┐");
+                Console.WriteLine($"│ {Nome.PadRight(23)} │");
+                Console.WriteLine("├─────────────────────────┤");
+                Console.WriteLine($"│ {Time.PadRight(23)} │");
+                Console.WriteLine($"│ {Posicao.PadRight(23)} │");
+                Console.WriteLine("├─────────────────────────┤");
+                Console.WriteLine($"│ 1.Gols.............: {Gols.ToString().PadLeft(3)}  │");
+                Console.WriteLine($"│ 2.Copas Mundo......: {Copas.ToString().PadLeft(3)}  │");
+                Console.WriteLine($"│ 3.Assistências....: {Assistencias.ToString().PadLeft(3)}  │");
+                Console.WriteLine($"│ 4.Nota Geral.......: {NotaGeral.ToString().PadLeft(3)}  │");
+                Console.WriteLine("└─────────────────────────┘");
             }
 
             public int ObterAtributo(int opcao)
